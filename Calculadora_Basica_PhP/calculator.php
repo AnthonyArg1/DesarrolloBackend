@@ -14,17 +14,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Realiza la operación correspondiente según la selección del usuario
     switch ($operator) {
         case "1":
-            $result = $num1 + $num2; // Suma
+            $result = "Suma entre <b>$num1</b> y <b>$num2</b> es: <b>". $num1 + $num2; // Suma
             break;
         case "2":
-            $result = $num1 - $num2; // Resta
+            $result = "Resta entre <b>$num1</b> y <b>$num2</b> es: <b>".$num1 - $num2; // Resta
             break;
         case "3":
-            $result = $num1 * $num2; // Multiplicacion
+            $result = "Multiplicacion entre <b>$num1</b> y <b>$num2</b> es: <b>".$num1 * $num2; // Multiplicacion
             break;
         case "4":
             if ($num2 != 0) { // Verifica si el segundo número no es cero
-                $result = $num1 / $num2; // Division
+                $result = "División entre <b>$num1</b> y <b>$num2</b> es: <b>".$num1 / $num2; // Division
             } else {
                 $result = "No se puede division por cero"; //Si es cero arrojar este error
             }
@@ -33,6 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $result = "Operación no válida";
     }
     // Dar el resultado con el echo lo envio al front donde lo recibo en el div result donde tengo el include
-    echo "<p>El Resultado de la <b>$operator</b>  entre los numeros <b>$num1</b> y <b>$num2</b> es: <b>$result</b></p>";
+    echo "<p>El Resultado de la $result</p>";
 }
 ?>
