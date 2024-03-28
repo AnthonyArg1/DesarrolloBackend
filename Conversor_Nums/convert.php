@@ -19,10 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && isset($_P
     // Realizar la conversión según la acción seleccionada
     switch ($action) {
         case 'decimalToBinary':
-            $result = decimalToBinary($number);
+            $result = "<b>Decimal</b> a <b>Binario</b> es: <b>" . decimalToBinary($number);
             break;
         case 'binaryToDecimal':
-            $result = binaryToDecimal($number);
+            $result = "<b>Binario</b> a <b>Decimal</b> es: <b>" . binaryToDecimal($number);
             break;
         default:
             $result = 'Acción no válida';
@@ -30,6 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && isset($_P
     }
 
     // Mostrar el resultado
-    echo "<p>El resultado de la conversión es: $result</p>";
+    echo "<p>El resultado de la conversión $result</p>";
 }
 ?>
