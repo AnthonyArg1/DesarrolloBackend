@@ -14,16 +14,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Realiza la operación correspondiente según la selección del usuario
     switch ($operator) {
         case "1":
-            $result = "Suma entre <b>$num1</b> y <b>$num2</b> es: <b>". $num1 + $num2; // Suma
+            // Hago una concatenacion de texto, luego sumo los valores, y me muestra en pantalla el valor de $result
+            $result = "Suma entre <b>$num1</b> y <b>$num2</b> es: <b>". $num1 + $num2;
             break;
         case "2":
+            // Hago una concatenacion de texto, luego resto los valores, y me muestra en pantalla el valor de $result
             $result = "Resta entre <b>$num1</b> y <b>$num2</b> es: <b>".$num1 - $num2; // Resta
             break;
         case "3":
+            // Hago una concatenacion de texto, luego multiplico los valores, y me muestra en pantalla el valor de $result
             $result = "Multiplicacion entre <b>$num1</b> y <b>$num2</b> es: <b>".$num1 * $num2; // Multiplicacion
             break;
         case "4":
             if ($num2 != 0) { // Verifica si el segundo número no es cero
+                // Hago una concatenacion de texto, luego divido los valores, y me muestra en pantalla el valor de $result
                 $result = "División entre <b>$num1</b> y <b>$num2</b> es: <b>".$num1 / $num2; // Division
             } else {
                 $result = "No se puede division por cero"; //Si es cero arrojar este error
