@@ -16,10 +16,10 @@
             <input type="number" name="num1" placeholder="Número 1" required>
             <select name="operator" required>
                 <option value="">Selecciona una operación</option>
-                <option value="suma">Suma</option>
-                <option value="resta">Resta</option>
-                <option value="multiplicacion">Multiplicacion</option>
-                <option value="division">Division</option>
+                <option value="1">Suma</option>
+                <option value="2">Resta</option>
+                <option value="3">Multiplicacion</option>
+                <option value="4">Division</option>
             </select>
             <input type="number" name="num2" placeholder="Número 2" required>
             <button type="submit">Calcular</button>
