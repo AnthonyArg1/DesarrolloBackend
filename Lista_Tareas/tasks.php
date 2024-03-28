@@ -9,7 +9,7 @@ if (file_exists("tasks.txt")) {
         echo "</form>";
     }
     foreach ($tasks as $task) {
-        echo "<li>$task <button class='delete-all'><a href='delete_task.php?task=$task'>Eliminar</a></button></li>";
+        echo "<li>$task <button class='delete-tasks'><a href='delete_task.php?task=$task'>Eliminar</a></button></li>";
     }
 }
 ?>

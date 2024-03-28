@@ -18,17 +18,24 @@ body {
     background-color: #ff4f4f;
     color: #121212;
 }
+.delete-tasks{
+    background-color: #ff4f4f;
+    color: #121212;
+}
 
 .delete-all:hover{
     background-color: #b10e0e;
     color: #121212;
+    font-weight: 700;
 }
 
-.delete-all a{
+.delete-tasks a{
     color: #121212;
 }
 
-.delete-all a:hover{
+.delete-tasks:hover, .delete-tasks a:hover{
+    background-color: #b10e0e;
+    color: #121212;
     font-weight: 700;
 }
 
