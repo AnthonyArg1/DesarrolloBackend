@@ -2,43 +2,48 @@ document.addEventListener('DOMContentLoaded', function () {
     let actionSelect = document.getElementById('action');
     let numberInput = document.getElementById('number');
 
-    // Verificar el valor inicial del menú desplegable al cargar la página
+    // Verificar el valor inicial del menu desplegable al cargar el DOM
     if (actionSelect.value === '') {
-        numberInput.disabled = true; // Si es una cadena vacía, deshabilitar el campo de entrada
+        // Si es un valor vacio, deshabilitar el campo de entrada
+        numberInput.disabled = true; 
     }
 
-    // Agregar evento de escucha al cambio de opción en el select
+    // Agregar evento de input al cambio de value en el select
     actionSelect.addEventListener('change', function () {
         if (actionSelect.value === 'binaryToDecimal') {
-            // Si la acción es "Binario a Decimal", agregar evento de escucha al campo de entrada
+            // Si la accion es Binario a Decimal, agregar evento de input al campo de entrada
             numberInput.addEventListener('input', restrictInputBinary);
         } else {
-            // Si la acción no es "Binario a Decimal", quitar el evento de escucha del campo de entrada
+            // Si la accion no es Binario a Decimal, quitar el evento de input del campo de entrada
             numberInput.removeEventListener('input', restrictInputBinary);
         }
         if (actionSelect.value === '') {
-            // Si no se ha seleccionado ninguna opción, deshabilitar el campo de entrada
+            // Si no se ha seleccionado ningun value, deshabilitar el campo de entrada
             numberInput.disabled = true;
         } else {
-            // Si se ha seleccionado alguna opción, habilitar el campo de entrada
+            // Si se ha seleccionado algun value, habilitar el campo de entrada
             numberInput.disabled = false;
         }
     });
 
-    // Función para restringir la entrada a solo 0 y 1 en caso de "Binario a Decimal"
+    // Funcion para restringir la entrada a solo 0 y 1 en caso de Binario a Decimal
     function restrictInputBinary(event) {
         let inputValue = event.target.value;
-        let filteredValue = inputValue.replace(/[^01]/g, ''); // Filtrar caracteres que no sean 0 o 1
-        event.target.value = filteredValue; // Actualizar el valor del campo de entrada
+        // Filtrar caracteres que no sean 0 o 1
+        let filteredValue = inputValue.replace(/[^01]/g, '');
+        // Actualizar el valor del campo de entrada
+        event.target.value = filteredValue; 
     }
 
-    // Agregar evento de escucha al campo de entrada en caso de "Decimal a Binario"
+    // Agregar evento de input al campo de entrada en caso de Decimal a Binario
     numberInput.addEventListener('input', restrictInputDecimal);
 
-    // Función para restringir la entrada a solo números en caso de "Decimal a Binario"
+    // Funcion para restringir la entrada a solo numeros en caso de Decimal a Binario
     function restrictInputDecimal(event) {
         let inputValue = event.target.value;
-        let filteredValue = inputValue.replace(/\D/g, ''); // Filtrar caracteres que no sean números
-        event.target.value = filteredValue; // Actualizar el valor del campo de entrada
+        // Filtrar caracteres que no sean numeros
+        let filteredValue = inputValue.replace(/\D/g, '');
+        // Actualizar el valor del campo de entrada
+        event.target.value = filteredValue; 
     }
 });
